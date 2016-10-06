@@ -1,0 +1,14 @@
+{
+  "extends": "es/2015/server",
+  "env": {
+    "mocha": false,
+    "jasmine": true
+  },
+  "rules": {
+    "dot-location": [ 2, "property" ],
+    "no-sync": "off",
+    "prefer-reflect": "off",
+    "mocha/no-synchronous-tests": "off",
+    "extended/consistent-err-names": "off"
+  }
+}
