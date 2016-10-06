@@ -1,8 +1,8 @@
 'use strict';
 
 const helper = require('./helper');
-const messageHandlerFactory = require('./message-handler-factory');
-const gulpEventHandler = require('./gulp-event-handler');
+const handlerFactory = require('./handler-factory');
+const rawEventHandler = require('./raw-event-handler');
 
 const setup = (gulpInstance, options) => {
   options = options || {};
@@ -13,7 +13,7 @@ const setup = (gulpInstance, options) => {
   }
 
   if (events === undefined || events === 'log_all') {
-    events = [ 'start', 'stop', 'err', 'not_found' ];
+    events = rawEventHandler.allowedEvents;
   }
 
   if (helper.getTypeOf(events) !== 'array') {
@@ -21,7 +21,7 @@ const setup = (gulpInstance, options) => {
   }
 
   if (handler === undefined) {
-    handler = messageHandlerFactory.write2file('gulp-times.txt');
+    handler = handlerFactory.write2file('gulp-times.txt');
   }
 
   if (helper.getTypeOf(handler) !== 'function') {
@@ -36,7 +36,7 @@ const setup = (gulpInstance, options) => {
     throw new Error('gulp-stopwatch: dateFormat must be a  valid dateformat string');
   }
 
-  gulpEventHandler.register(gulpInstance, events, handler, dateFormat);
+  rawEventHandler.register(gulpInstance, events, handler, dateFormat);
 };
 
-module.exports = { setup, write2file: messageHandlerFactory.write2file };
+module.exports = { setup, helper, write2file: handlerFactory.write2file };
