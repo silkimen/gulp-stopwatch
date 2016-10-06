@@ -1,36 +1,16 @@
-# gulp-stopwatch
+# gulp-stopwatch [![Build Status](https://travis-ci.org/silkimen/gulp-stopwatch.svg?branch=master)](https://travis-ci.org/silkimen/gulp-stopwatch) [![Dependency Status](https://david-dm.org/silkimen/gulp-stopwatch.svg)](https://david-dm.org/silkimen/gulp-stopwatch)
 
-Use this module to record runtime duration and persist the data on the harddrive or use a custom handler to e.g. send them to a server.
+
+Use this module to record runtime duration of your gulp tasks. Persist the data on the hard disk or use a custom handler to e.g. send them to a server.
 
 This way you can log and analyze performance issues in your team's gulp build and dev cycle. You can see which tasks are taking too long on different machines and which tasks are used more often.
 
-## Install
+Just load this module in your gulpfile.js and run the `setup()` function to activate the hooks with default configuration.
+
+## Installation
 ```bash
 npm install gulp-stopwatch
 ```
-
-## Options
-
-#### options.handler
-Type: `Function`
-
-Define a custom handler which is called for every registered event (see usage examples).
-
-#### options.dateFormat
-Type: `String`
-
-Define a custom date format which is used in the log messages.
-
-#### options.events
-Type: `Array` || `String
-`
-An array defining which events should be logged or 'log_all'. Defaults to logging all events.
-
-> Available events are:
-* start
-* stop
-* err
-* not_found
 
 ## Usage examples
 
@@ -76,3 +56,26 @@ stopwatch.setup(gulp, {
   dateFormat: 'yyyy-mm-dd'
 });
 ```
+
+## Options
+
+#### options.handler
+Type: `Function`
+
+Define a custom handler which is called for every registered event (see usage examples).
+
+#### options.dateFormat
+Type: `String`
+
+Define a custom date format which is used in the log messages.
+
+#### options.events
+Type: `Array` || `String
+`
+An array defining which events should be logged or 'log_all'. Defaults to logging all events.
+
+> Available events are:
+* start
+* stop
+* err
+* not_found
