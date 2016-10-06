@@ -9,8 +9,12 @@
   },
   "author": "Sefa Ilkimen <sefa@ilkimen.net>",
   "license": "MIT",
+  "engines": {
+    "node": ">=3.0.0"
+  },
   "dependencies": {
-    "dateformat": "^1.0.12"
+    "dateformat": "^1.0.12",
+    "mkdirp": "^0.5.1"
   },
   "devDependencies": {
     "babel-cli": "^6.16.0",

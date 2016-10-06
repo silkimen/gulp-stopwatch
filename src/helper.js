@@ -1,6 +1,8 @@
 'use strict';
 
 const dateformat = require('dateformat');
+const path = require('path');
+const os = require('os');
 
 const getTimestamp = format => `[${dateformat(new Date(), format)}]`;
 
@@ -27,4 +29,12 @@ const getTypeOf = object => {
   }
 };
 
-module.exports = { getTimestamp, getTypeOf };
+const expandHomeDir = pathIn => {
+  if (getTypeOf(pathIn) === 'string' && pathIn.substr(0, 1) === '~') {
+    return path.join(os.homedir(), pathIn.substr(1));
+  }
+
+  return pathIn;
+};
+
+module.exports = { expandHomeDir, getTimestamp, getTypeOf };

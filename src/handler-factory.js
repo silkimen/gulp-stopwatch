@@ -2,6 +2,8 @@
 
 const fs = require('fs');
 const helper = require('./helper');
+const mkdirp = require('mkdirp');
+const path = require('path');
 
 const getMessage = ({ argv, dateFormat, duration, task, type }) => {
   switch (type) {
@@ -22,7 +24,12 @@ const getMessage = ({ argv, dateFormat, duration, task, type }) => {
   }
 };
 
-const write2file = filename => event => fs.appendFileSync(filename, `${getMessage(event)}\n`);
+const write2file = filename => event => {
+  const resolvedPath = helper.expandHomeDir(filename);
+
+  mkdirp.sync(path.dirname(resolvedPath));
+  fs.appendFileSync(resolvedPath, `${getMessage(event)}\n`);
+};
 
 /** @todo: add a handler that logs messages to server via http call */
 
