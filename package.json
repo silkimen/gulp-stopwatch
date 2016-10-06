@@ -1,7 +1,6 @@
 {
   "name": "gulp-stopwatch",
   "version": "1.0.0",
-  "description": "",
   "main": "dist/gulp-stopwatch.js",
   "scripts": {
     "build": "babel src -d dist",
@@ -21,5 +20,21 @@
     "eslint-plugin-extended": "^0.2.0",
     "eslint-plugin-mocha": "^4.6.0",
     "jasmine": "^2.5.2"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/silkimen/gulp-stopwatch.git"
+  },
+  "bugs": {
+    "url": "https://github.com/silkimen/gulp-stopwatch/issues"
+  },
+  "homepage": "https://github.com/silkimen/gulp-stopwatch#readme",
+  "description": "Record runtime duration of gulp tasks and save them to your HDD or send them to a server.",
+  "keywords": [
+    "gulp",
+    "record",
+    "duration",
+    "task",
+    "stopwatch"
+  ]
 }
