@@ -1,11 +1,14 @@
 language: node_js
 node_js:
-  - stable
-  - "7.0"
-  - "6.0"
-  - "5.0"
-  - "4.4"
-  - "4.0"
+- stable
+- '7.0'
+- '6.0'
+- '5.0'
+- '4.4'
+- '4.0'
 before_script:
-  - "npm run lint"
-  - "npm run build"
+- npm run lint
+- npm run build
+notifications:
+  slack:
+    secure: CRfdarJoS7CSepg7BbjPWJY81ge4SAv9AFESJz3kqCEejYmGX0h2DdVQRjme+9YMAhqEAXPciHMsiLPLdOytZt78RoGtQrVt5lEgDEGle5Qd8hxm3929xHrJwkJWbk8kQXdyMrP78BxGH4c+K/yMkZ1dnxdUJIJTEeewS2+cMWSBtKEYRoB/NsqZMAVQBoU3zNVe9hpEBE8KuH3nrgk2dMzkBZyVIIn/+XMjQBnVPltKJT0AqYFClOhsSNXaNKc16Srxxz1R2/XAl0SJE7iKhUWJXBYUXHHTvaDW+/o93hY7XVcis2aeXegOjz0s6rCYRYr2Nv3yt7avK+DgwEmwUU8QWXwlhi9YH5C1Eq9qjvmtIJGIkzp60PQfzJWmGyTHmkxqk1VXXs5g61BH+v4RLOZQHPc9hRWSTtLNihAkkUIS/Uyw18zxh470PCHrjmQRNhPgfoCkHO9AyactDJjiGEdzt0Wd9vIsmJpHqJhtszcK/0InaiahPRnKnfAlDI6wVooEllC1bhFyF5UdRSdn8F9ALxcfLeAgKMzPpGcaWRoADWToeQXkJF8N6Ge7viJMyTHcKVQx7NgBCAaEppb9d5sTr4CP1aNZsV38SqmG3+rRGJCrvOF7pBR/GZZ6T/NBg3uFHcxkZvvvqMEMNuhNpZPCj7l6r2bcxcUDElmx5Ik=
