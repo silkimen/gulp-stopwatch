@@ -10,10 +10,10 @@
   "author": "Sefa Ilkimen <sefa@ilkimen.net>",
   "license": "MIT",
   "engines": {
-    "node": ">=3.0.0"
+    "node": ">=4.0.0"
   },
   "dependencies": {
-    "dateformat": "^1.0.12",
+    "dateformat": "^2.0.0",
     "mkdirp": "^0.5.1"
   },
   "devDependencies": {
@@ -36,6 +36,8 @@
   "description": "Record runtime duration of gulp tasks and save them to your HDD or send them to a server.",
   "keywords": [
     "gulp",
+    "analyse",
+    "debug",
     "record",
     "duration",
     "task",
