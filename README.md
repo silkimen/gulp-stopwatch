@@ -30,6 +30,15 @@ stopwatch.setup(gulp, {
 });
 ```
 
+#### CSV handler (write comma-separated values) and default date format, log all events:
+```js
+const stopwatch = require('gulp-stopwatch');
+
+stopwatch.setup(gulp, {
+  handler: stopwatch.write2csv('record.txt')
+});
+```
+
 #### Default handler and default date format, but do only log events `task_start` and `task_stop`:
 ```js
 const stopwatch = require('gulp-stopwatch');
@@ -79,7 +88,7 @@ stopwatch.setup(gulp, {
 #### options.handler
 Type: `Function`
 
-Define a custom handler which is called for every registered event with the attributes `argv`, `dateFormat`, `duration`, `task`, `type` and additional attributes passed in by gulp (see usage examples).
+Define a custom handler (or one of the shipped handlers) which is called for every registered event with the attributes `argv`, `dateFormat`, `duration`, `task`, `type` and additional attributes passed in by gulp (see usage examples).
 
 #### options.dateFormat
 Type: `String`

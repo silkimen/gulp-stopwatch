@@ -31,6 +31,15 @@ const write2file = filename => event => {
   fs.appendFileSync(resolvedPath, `${getMessage(event)}\n`);
 };
 
+const write2csv = filename => event => {
+  const { argv, dateFormat, duration, task, type } = event;
+  const resolvedPath = helper.expandHomeDir(filename);
+  const csvLine = `"${helper.getTimestamp(dateFormat)}","${type}","${task}","${argv.join(' ')}","${duration}"\n`;
+
+  mkdirp.sync(path.dirname(resolvedPath));
+  fs.appendFileSync(resolvedPath, csvLine);
+};
+
 /** @todo: add a handler that logs messages to server via http call */
 
-module.exports = { write2file };
+module.exports = { write2file, write2csv };

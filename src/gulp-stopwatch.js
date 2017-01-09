@@ -39,4 +39,9 @@ const setup = (gulpInstance, options) => {
   rawEventHandler.register(gulpInstance, events, handler, dateFormat);
 };
 
-module.exports = { setup, helper, write2file: handlerFactory.write2file };
+module.exports = {
+  setup,
+  helper,
+  write2file: handlerFactory.write2file,
+  write2csv: handlerFactory.write2csv
+};

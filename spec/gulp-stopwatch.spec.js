@@ -25,6 +25,10 @@ describe('Gulp Stopwatch', () => {
     expect(stopwatch.write2file('test.txt')).toBeDefined();
   });
 
+  it('should expose a factory for write-to-csv handler', () => {
+    expect(stopwatch.write2csv('test.txt')).toBeDefined();
+  });
+
   describe('when no options are given', () => {
     it('should register a handler for all events', () => {
       spyOn(fakeGulp, 'on');
